@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js",
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
     "test": "node --no-warnings --test",
     "test:1": "node --no-warnings test/1.test.js"
   },
