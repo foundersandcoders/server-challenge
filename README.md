@@ -46,3 +46,19 @@ Edit your `GET /colour` route to include a form in the HTML response. This form 
 Create a new route `GET /cheese`. It should return an HTML response containing a form for submitting new cheeses. The form shoudl send POST requests to the same page. It should include a text input for the cheese name and a range input for the cheese's rating (from 0 to 5).
 
 ## Challenge 5
+
+Create a new route `POST /cheese`. It should receive the POST request from the previous form and use the built-in Express middleware to read the url-encoded request body.
+
+It should store each cheese rating in an array **outside** of the handler function, so other routes can access this information. Once the new rating is pushed to this array it should redirect back to the same page.
+
+Amend the `GET /cheese` handler to render a list of cheese ratings that have been submitted.
+
+**Hint**: you can dynamically create an HTML list from an array by looping over it with `for..of` or `.map().join("")` to create a string. E.g.
+
+```js
+const nums = [1, 2, 3];
+const list = nums.map((num) => `<li>${num}</li>`);
+const html = `<ul>${list.join("")}</ul>`;
+```
+
+Submitting the form should result in the page reloading and displaying the newly added cheese in the list.

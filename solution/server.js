@@ -22,7 +22,12 @@ server.get("/colour", (req, res) => {
   res.send(html);
 });
 
+const cheeses = [];
+
 server.get("/cheese", (req, res) => {
+  const list = cheeses.map((cheese) => {
+    return `<li>${cheese.name} | ${cheese.rating} stars</li>`;
+  });
   const html = `
     <form method="POST">
       <p>
@@ -35,8 +40,18 @@ server.get("/cheese", (req, res) => {
       </p>
       <button>Rate cheese</button>
     </form>
+    <ul>
+      ${list.join("")}
+    </ul>
   `;
   res.send(html);
+});
+
+server.post("/cheese", express.urlencoded({ extended: false }), (req, res) => {
+  const name = req.body.name;
+  const rating = req.body.rating;
+  cheeses.push({ name, rating });
+  res.redirect("/cheese");
 });
 
 module.exports = server;

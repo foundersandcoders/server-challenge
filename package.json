@@ -6,7 +6,8 @@
     "test:1": "node --no-warnings test/1.test.js",
     "test:2": "node --no-warnings test/2.test.js",
     "test:3": "node --no-warnings test/3.test.js",
-    "test:4": "node --no-warnings test/4.test.js"
+    "test:4": "node --no-warnings test/4.test.js",
+    "test:5": "node --no-warnings test/5.test.js"
   },
   "dependencies": {
     "express": "^4.18.1"

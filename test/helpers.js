@@ -6,7 +6,8 @@ async function request(pathname, options = {}) {
   const response = await fetch(url, options);
   app.close();
   const body = await response.text();
-  return { status: response.status, body };
+  const headers = Object.fromEntries(response.headers);
+  return { status: response.status, body, headers };
 }
 
 function assert_attr(body, name, expected, msg) {
