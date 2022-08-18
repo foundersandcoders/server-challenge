@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const request = require("./request.js");
+const { request } = require("./helpers.js");
 
 test("/colour sets body background to hex param", async () => {
   const { status, body } = await request("/colour?hex=ff0000");

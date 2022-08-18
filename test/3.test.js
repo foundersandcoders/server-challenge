@@ -1,6 +1,6 @@
 const test = require("node:test");
 const assert = require("node:assert");
-const request = require("./request.js");
+const { request, assert_attr } = require("./helpers.js");
 
 test("/colour renders a <form>", async () => {
   const { status, body } = await request("/colour?hex=ff0000");
@@ -29,15 +29,3 @@ test("/colour renders a <form>", async () => {
     `Expected HTML to include a label element, but received:\n${body}`
   );
 });
-
-function assert_attr(body, name, [expected], msg) {
-  const get_attr = new RegExp(`${name}="([^"]*)"`, "i");
-  const match = body.match(get_attr);
-  if (match) {
-    // [0] is the full match, [1] is the bit between the quotes
-    const attr = match[1];
-    if (!expected.includes(attr)) {
-      assert.equal(attr, expected, msg);
-    }
-  }
-}
