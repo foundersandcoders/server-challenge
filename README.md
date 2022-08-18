@@ -14,3 +14,8 @@ Make sure you have Git and Node (v18) installed.
 ## Checking your work
 
 Each challenge has associated unit tests. You can either run all the tests with `npm test`, or each individual challenge's tests with `npm run test:1`, `npm run test:2` etc.
+
+## Challenge 1
+
+Create a new route for the homepage at `GET /`. It should return an HTML body including a `<h1>Hello Express</h1>`.
+
