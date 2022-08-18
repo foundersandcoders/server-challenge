@@ -8,7 +8,7 @@ Make sure you have Git and Node (v18) installed.
 
 1. Clone this repo and `cd` into the directory
 1. Run `npm install` to install all the dependencies
-1. Run `npm run dev` to start the server.
+1. Run `npm run dev` to start the server.  
    This uses the `nodemon` library to auto-restart the server when you save changes.
 
 ## Checking your work
@@ -62,3 +62,5 @@ const html = `<ul>${list.join("")}</ul>`;
 ```
 
 Submitting the form should result in the page reloading and displaying the newly added cheese in the list.
+
+https://user-images.githubusercontent.com/9408641/185444951-a9510a3a-906e-499a-8142-b7bd058f8838.mp4
