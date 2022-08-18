@@ -22,4 +22,21 @@ server.get("/colour", (req, res) => {
   res.send(html);
 });
 
+server.get("/cheese", (req, res) => {
+  const html = `
+    <form method="POST">
+      <p>
+        <label for="name">Cheese name</label>
+        <input name="name">
+      </p>
+      <p>
+        <label for="rating">Cheese rating</label>
+        <input name="rating" type="range" min="0" max="5" step="0.5">
+      </p>
+      <button>Rate cheese</button>
+    </form>
+  `;
+  res.send(html);
+});
+
 module.exports = server;
