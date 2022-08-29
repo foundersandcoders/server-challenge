@@ -19,7 +19,7 @@ test("/cheese can store new cheese ratings", async () => {
   assert.match(
     body,
     /gorgonzola/i,
-    `Expected HTML to "gorgonzola", the submitted cheese's name, but received:\n${body}`
+    `Expected HTML to include "gorgonzola", the submitted cheese's name, but received:\n${body}`
   );
   assert.match(
     body,
