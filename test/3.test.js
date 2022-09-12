@@ -4,7 +4,7 @@ const { request, assert_attr } = require("./helpers.js");
 
 test("/colour renders a <form>", async () => {
   const { status, body } = await request("/colour?hex=ff0000");
-
+  console.log({ body });
   assert.equal(status, 200);
   assert.match(
     body,
