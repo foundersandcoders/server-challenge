@@ -51,7 +51,6 @@ server.post("/cheese", express.urlencoded({ extended: false }), (req, res) => {
   const name = req.body.name;
   const rating = req.body.rating;
   cheeses.push({ name, rating });
-  console.log(cheeses);
   res.redirect("/cheese");
 });
 
