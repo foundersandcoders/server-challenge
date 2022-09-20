@@ -1,8 +1,9 @@
-const server = require("../src/server.js");
+const server = require("../solution/server.js");
 
 async function request(pathname, options = {}) {
-  const app = server.listen(9876);
-  const url = new URL(pathname, "http://localhost:9876");
+  const app = server.listen(0);
+  const { port } = app.address();
+  const url = new URL(pathname, `http://localhost:${port}`);
   const response = await fetch(url, options);
   app.close();
   const body = await response.text();
