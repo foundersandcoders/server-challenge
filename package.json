@@ -2,12 +2,12 @@
   "scripts": {
     "dev": "nodemon src/index.js",
     "start": "node src/index.js",
-    "test": "node --no-warnings --test",
-    "test:1": "node --no-warnings test/1.test.js",
-    "test:2": "node --no-warnings test/2.test.js",
-    "test:3": "node --no-warnings test/3.test.js",
-    "test:4": "node --no-warnings test/4.test.js",
-    "test:5": "node --no-warnings test/5.test.js"
+    "test": "node --test",
+    "test:1": "node  test/1.test.js",
+    "test:2": "node test/2.test.js",
+    "test:3": "node test/3.test.js",
+    "test:4": "node test/4.test.js",
+    "test:5": "node test/5.test.js"
   },
   "dependencies": {
     "express": "^4.18.1"
@@ -17,7 +17,7 @@
     "nodemon": "^2.0.19"
   },
   "volta": {
-    "node": "18.7.0"
+    "node": "18.16.0"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
