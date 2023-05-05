@@ -4,6 +4,7 @@ async function request(pathname, options = {}) {
   const app = server.listen(0);
   const { port } = app.address();
   const url = new URL(pathname, `http://localhost:${port}`);
+  options.headers = { ...options.headers, connection: "close" };
   const response = await fetch(url, options);
   app.close();
   const body = await response.text();
